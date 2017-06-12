@@ -7,7 +7,9 @@ cd ~/ && git clone https://github.com/mingzhaodotname/kubeadm-flannel.git && cd 
 ```
 
 ## Initialize cluster
-```kubeadm init --pod-network-cidr=10.244.0.0/16```
+```
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+```
 
 ## Config kubectl
 ```
