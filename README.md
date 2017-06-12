@@ -19,9 +19,22 @@ kubectl cluster-info
 
 ## Create flannel network addon
 ```
-kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml
-kubectl create -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+kubectl create -f kube-flannel-rbac.yml
+kubectl create -f kube-flannel.yml
 ```
+kube-flannel-rbac.yml is locked down from https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel-rbac.yml.
+
+kube-flannel.yml is locked down from https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml.
+
 
 ## Create kubernetes dashboard
-```kubectl create -f kubernetes-dashboard.yaml```
+```
+kubectl create -f kubernetes-dashboard.yaml
+kubectl proxy
+```
+
+The dashboard is available at: http://localhost:8001/ui
+
+
+kubernetes-dashboard.yaml is locked down from https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/kubernetes-dashboard.yaml.
+
