@@ -11,4 +11,4 @@ apt-get update
 apt-get install -y docker-engine
 # ??? make docker accessbile without sudo
 
-apt-get install -y kubelet kubernetes-cni
+apt-get install -y kubelet kubeadm kubernetes-cni
