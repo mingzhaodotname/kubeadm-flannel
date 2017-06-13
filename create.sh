@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-cd ~/ && git clone https://github.com/mingzhaodotname/kubeadm-flannel.git && cd kubeadm-flannel
+# cd ~/ && git clone https://github.com/mingzhaodotname/kubeadm-flannel.git && cd kubeadm-flannel
 
 sudo ./kubeadm init --pod-network-cidr=10.244.0.0/16
 
