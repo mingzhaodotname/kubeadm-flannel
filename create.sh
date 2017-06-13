@@ -1,4 +1,5 @@
 #!/bin/bash
+# To be run manually with human interaction.
 set -ex
 
 # cd ~/ && git clone https://github.com/mingzhaodotname/kubeadm-flannel.git && cd kubeadm-flannel
@@ -10,11 +11,13 @@ sudo cp /etc/kubernetes/admin.conf ~/.kube/config
 sudo chmod +r ~/.kube/config
 ./kubectl cluster-info
 
-# Watch and wait until all but dns pod are up and running.
-./kubectl get pods --all-namespaces
+# Watch and wait until all but dns pod are up and running. kubectl get pods might fail.
+watch ./kubectl get pods --all-namespaces
 
 ./kubectl create -f kube-flannel-rbac.yml
 ./kubectl create -f kube-flannel.yml
 
 ./kubectl get pods --all-namespaces
 ./kubectl create -f kubernetes-dashboard.yaml
+
+watch ./kubectl get pods --all-namespaces
